@@ -2,8 +2,11 @@ import routes from './routes/routes';
 import UrlParser from './routes/url-parser';
 import Footer from './view/component/footer';
 import Navbar from './view/component/navbar';
+import Market from './view/pages/feature/market';
+import News from './view/pages/feature/news';
 import Profile from './view/pages/feature/profile';
 import Home from './view/pages/home';
+import DetailBerita from './view/pages/template-creators/detailBerita';
 
 class Main {
   constructor({
@@ -31,30 +34,44 @@ class Main {
     }
   }
 
-  renderPage() {
+  async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const Page = routes[url];
 
     if (Page) {
       const page = new Page();
       this._content.innerHTML = '';
-      this._content.appendChild(page._render());
+      this._content.appendChild(await page._render());
 
       if (url === '/') {
         const homePage = new Home();
         homePage._initializeEvent();
       }
+
       if (url === '/profile') {
         const profilePage = new Profile();
         profilePage._initializeEvent();
       }
-      if (url === '/berita') {
-        const profilePage = new Profile();
-        profilePage._initializeEvent();
-      }
+
       if (url === '/market') {
-        const profilePage = new Profile();
-        profilePage._initializeEvent();
+        const marketPage = new Market();
+        marketPage._initializeEvent();
+      }
+    }
+
+    if (url.startsWith('/berita/')) {
+      const splitedUrl = UrlParser.parseActiveUrlWithoutCombiner();
+
+      if (splitedUrl.id) {
+        const detailPage = new DetailBerita(splitedUrl.id);
+        this._content.innerHTML = '';
+
+        const pageContent = await detailPage._render();
+        this._content.appendChild(pageContent);
+      } else {
+        const newsPage = new News();
+        this._content.innerHTML = '';
+        this._content.appendChild(await newsPage._render());
       }
     }
   }

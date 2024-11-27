@@ -1,4 +1,5 @@
 /* eslint-disable no-new */
+import limitWords from '../../utils/limitWords';
 import SwiperUtility from '../../utils/swiper';
 import IncomeChart from '../component/incomeChart';
 
@@ -75,12 +76,12 @@ class Home {
           <h1 class="fw-semibold" style="color:#327a6d; text-transform:uppercase;">sotk</h1>
           <h5>Struktur Organisasi dan Tata Kerja Desa Tagawiti</h5>
         </div>
-        <div class="swiper section-card-content-3">
+        <div class="swiper swiper-1 section-card-content-3 py-3">
           <div class="swiper-wrapper">
-          <div class="swiper-slide card">
+            <div class="swiper-slide card">
               <img data-src="./images/gov/img-gov1.webp" class="card-img-top lazyload">
               <div class="card-body">
-                <h5 class="card-title card-title text-center fw-semibold style="text-transform: uppercase;">Kornelis K. B. Making</h5>
+                <h5 class="card-title text-center fw-semibold style="text-transform: uppercase;">Kornelis K. B. Making</h5>
                 <p class="card-text text-center">Kepala Desa</p>
               </div>
             </div>
@@ -94,23 +95,29 @@ class Home {
             <div class="swiper-slide card">
               <img data-src="./images/gov/img-gov3.webp" class="card-img-top lazyload">
               <div class="card-body">
-                <h5 class="card-title card-title text-center fw-semibold style="text-transform: uppercase;">Damianus H. L. Ona</h5>
+                <h5 class="card-title text-center fw-semibold style="text-transform: uppercase;">Damianus H. L. Ona</h5>
                 <p class="card-text text-center">Kepala Urusan Umum</p>
               </div>
             </div>
             <div class="swiper-slide card">
               <img data-src="./images/gov/img-gov2.webp" class="card-img-top lazyload">
               <div class="card-body">
-                <h5 class="card-title card-title text-center fw-semibold style="text-transform: uppercase;">Benediktus L. LB</h5>
+                <h5 class="card-title text-center fw-semibold style="text-transform: uppercase;">Benediktus L. LB</h5>
                 <p class="card-text text-center">Kepala Urusan Keuangan</p>
               </div>
             </div>
-            
-          </div>
+            <div class="swiper-slide card">
+              <img data-src="./images/gov/img-gov4.webp" class="card-img-top lazyload">
+              <div class="card-body">
+                <h5 class="card-title text-center fw-semibold style="text-transform: uppercase;">Simplis Langoday</h5>
+                <p class="card-text text-center">Operator SISKEUDES</p>
+              </div>
+            </div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-1"></div>
+        <div class="swiper-button-prev swiper-button-prev-1"></div>
+        <div class="swiper-button-next swiper-button-next-1"></div>
         <div class="text-end pt-3">
           <a href="#/profile" class="href-profile">Lihat Struktur Lebih Lengkap &#8594;</a>
         </div>
@@ -129,7 +136,50 @@ class Home {
         </div>
       </div>
     </section>
-    `;
+
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center">
+      <div class="d-flex flex-column justify-content-center py-3 section-content-5">
+        <div class="pb-3">
+          <h1 class="fw-semibold" style="color:#327a6d; text-transform:uppercase;">market</h1>
+          <h5>Produk yang disediakan untuk dipublikasikan</h5>
+        </div>
+        <div class="swiper swiper-2 section-card-content-5 py-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide card">
+              <img data-src="./images/market/product1.webp" class="card-img-top lazyload">
+              <div class="card-body">
+                <h5 class="card-title text-center fw-semibold style="text-transform: uppercase;">Jagreenola</h5>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-2"></div>
+          <div class="swiper-button-prev swiper-button-prev-2"></div>
+          <div class="swiper-button-next swiper-button-next-2"></div>
+          <div class="text-end pt-3">
+            <a href="#/market">Lihat Selengkapnya &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </section>    
+
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" style="background-color: #eaf8ef">
+      <div class="d-flex flex-column justify-content-center py-3 section-content-6">
+        <div class="pb-3">
+          <h1 class="fw-semibold" style="color:#327a6d; text-transform:uppercase;">berita</h1>
+          <h5>Menyajikan informasi terbaru tentang peristiwa, wisata, dan berita terkini dari Desa Tagawiti</h5>
+        </div>
+        <div class="swiper swiper-3 section-card-content-6 py-3">
+          <div class="swiper-wrapper" id="newsContainer">
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-3"></div>
+        <div class="swiper-button-prev swiper-button-prev-3"></div>
+        <div class="swiper-button-next swiper-button-next-3"></div>
+        <div class="text-end pt-3">
+          <a href="#/berita" class="href-news">Lihat Berita Lainnya &#8594;</a>
+        </div>
+      </div>
+    </section>`;
 
     return contentContainer;
   }
@@ -137,6 +187,60 @@ class Home {
   _initializeEvent() {
     new SwiperUtility();
     new IncomeChart('https://api.desatagawiti.com');
+    this._getNews();
+  }
+
+  async _getNews() {
+    const API_URL = 'https://api.desatagawiti.com/api/get/all/news';
+    const newsContainer = document.getElementById('newsContainer');
+
+    try {
+      const response = await fetch(API_URL);
+      const result = await response.json();
+
+      if (!response.ok || !result.data) throw new Error(result.message || 'Gagal mengambil data berita.');
+
+      newsContainer.innerHTML = '';
+      result.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+      result.data.forEach((news) => {
+        // Creating Element
+        const newsElement = document.createElement('a');
+        newsElement.classList.add('swiper-slide', 'text-decoration-none', 'card');
+        newsElement.href = `#/berita/${news.id}-${news.title.replace(/\s+/g, '-').toLowerCase()}`;
+
+        const limitedDescription = limitWords(news.description, 10);
+        const limitedTitle = limitWords(news.title, 5);
+
+        newsElement.innerHTML = `
+          <img data-src="${news.image_url}" class="card-img-top lazyload" alt="${news.title}">
+          <div class="card-body">
+            <h5 class="card-title text-start fw-semibold" style="text-transform: uppercase;">${limitedTitle}</h5>
+            <p class="card-text pt-2 text-start">${limitedDescription}</p>
+            <div class="pt-4">
+              <div class="d-flex gap-2 flex-row align-items-center text-secondary" style="font-size: 0.9rem;">
+                <i class="bi bi-person-fill"></i>
+                <p class="m-0">${news.author}</p>
+              </div>
+              <div class="d-flex gap-2 flex-row align-items-center text-secondary" style="font-size: 0.9rem;">
+                <i class="bi bi-calendar-fill"></i>
+                <p class="m-0">${new Date(news.created_at).toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })}</p>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Adding Element
+        newsContainer.appendChild(newsElement);
+      });
+    } catch (error) {
+      console.error('Error:', error.message);
+      newsContainer.innerHTML = '<p class="text-danger">Gagal memuat berita. Silakan coba lagi.</p>';
+    }
   }
 }
 

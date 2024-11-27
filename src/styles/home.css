@@ -76,7 +76,7 @@
   text-decoration: underline;
 }
 
-.section-content-3 .swiper {
+.section-content-3 .swiper-1 {
   width: 100%;
   height: 100%;
 }
@@ -85,19 +85,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.section-content-3 .card {
   width: 100%;
   height: 350px;
 }
 
-.section-content-3 .swiper-pagination {
+.section-content-3 .swiper-pagination-1 {
   display: none;
 }
 
-.section-content-3 .swiper-button-prev,
-.section-content-3 .swiper-button-next {
+.section-content-3 .swiper-button-prev-1,
+.section-content-3 .swiper-button-next-1 {
   color: #327a6d;
 }
 
@@ -119,9 +116,102 @@
 
 .section-content-4 .form-select {
   font-size: 1rem;
-  padding: 10px;
   text-align: left;
   max-width: 150px;
+}
+
+/* Section 5 */
+.section-content-5 {
+  width: 60%;
+  position: relative;
+}
+
+.section-content-5 a{
+  text-decoration: none;
+  color: #000;
+}
+
+.section-content-5 a:hover{
+  color: #327a6d;
+  text-decoration: underline;
+}
+
+.section-content-5 .swiper-2 {
+  width: 100%;
+  height: 100%;
+}
+
+.section-content-5 .section-card-content-5 .card {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 300px;
+}
+
+.section-content-5 .section-card-content-5 .card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.section-content-5 .swiper-pagination-2 {
+  display: none;
+}
+
+.section-content-5 .swiper-button-prev-2,
+.section-content-5 .swiper-button-next-2 {
+  color: #327a6d;
+}
+
+/* Section 6 */
+.section-content-6 {
+  width: 60%;
+  position: relative;
+}
+.section-content-6 .href-news {
+  text-decoration: none;
+  color: #000;
+}
+
+.section-content-6 .href-news:hover {
+  color: #327a6d;
+  text-decoration: underline;
+}
+.section-content-6 .swiper-3 {
+  width: 100%;
+  height: 100%;
+}
+
+.section-content-6 .section-card-content-6 .card {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 400px;
+  cursor: pointer;
+  border: none;
+}
+
+.section-content-6 .section-card-content-6 .card:hover {
+  transition: 0.2s ease-in;
+  color: #327a6d;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.section-content-6 .section-card-content-6 .card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.section-content-6 .swiper-pagination-3 {
+  display: none;
+}
+
+.section-content-6 .swiper-button-prev-3,
+.section-content-6 .swiper-button-next-3 {
+  color: #327a6d;
 }
 
 @media (max-width: 1650px) {
@@ -131,12 +221,26 @@
   .section-content-1 {
     width: 75%;
   }
-  .section-content-3 {
-    width: 75%;
-  }
   .section-inner-content-1 .img-section-1 {
     width: 450px;
     height: 300px;
+  }
+  .section-content-2 {
+    width: 75%;
+  }
+  .section-content-3 {
+    width: 75%;
+  }
+  .section-content-4 {
+    width: 75%;
+  }
+
+  .section-content-5 {
+    width: 75%;
+  }
+
+  .section-content-6 {
+    width: 75%;
   }
 }
 
@@ -170,6 +274,12 @@
     align-items: center;
     padding: 1rem;
   }
+  .section-content-5 {
+    text-align: center;
+  }
+  .section-content-6 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 580px) {
@@ -196,6 +306,9 @@
     width: 100%;
     padding: 1.5rem;
   }
+  .section-content-2 h5 {
+    font-size: 1rem;
+  }
   .hero .section-content-2 .iframe-section {
     min-height: 70vh;
   }
@@ -205,7 +318,9 @@
   .section-content-3 .section-card-content-3 {
     flex-wrap: wrap;
   }
-
+  .section-content-3 h5 {
+    font-size: 1rem;
+  }
   .section-content-4 {
     width: 100%;
     padding: 1rem;
@@ -218,5 +333,26 @@
   }
   .section-content-4 .canvas-container {
     align-items: center;
+  }
+  .section-content-4 h5 {
+    font-size: 1rem;
+  }
+  .section-content-5 {
+    text-align: center;
+  }
+  .section-content-5 h5 {
+    font-size: 1rem;
+  }
+  .section-content-5 .section-card-content-5 {
+    flex-wrap: wrap;
+  }
+  .section-content-6 {
+    text-align: center;
+  }
+  .section-content-6 h5 {
+    font-size: 1rem;
+  }
+  .section-content-6 .section-card-content-6 {
+    flex-wrap: wrap;
   }
 }

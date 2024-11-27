@@ -4,6 +4,7 @@ import '../styles/main.css';
 import Main from './app';
 import LoadingCircle from './utils/loading';
 import NavbarVisibility from './utils/navbarVisibility ';
+import updateAria from './utils/updateAria';
 
 const app = new Main({
   content: document.querySelector('#mainContent'),
@@ -13,31 +14,20 @@ const app = new Main({
 
 const loadingBar = new LoadingCircle();
 
-window.addEventListener('hashchange', () => {
-  document.querySelectorAll('.nav-links').forEach(link => {
-    const pathName = window.location.hash.slice(1);
-    if (link.getAttribute('href').slice(1) === pathName) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current', 'page');
-    }
-  });
-  app.renderPage();
-  window.scrollTo(0, 0);
+window.addEventListener('load', () => {
+  updateAria();
+  loadingBar.show();
+
+  setTimeout(() => {
+    app.renderPage();
+    loadingBar.hide();
+  }, 500);
 });
 
-window.addEventListener('load', async () => {
-  document.querySelectorAll('.nav-links').forEach(link => {
-    const pathName = window.location.hash.slice(1);
-    if (link.getAttribute('href').slice(1) === pathName) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current', 'page');
-    }
-  });
-  loadingBar.show();
+window.addEventListener('hashchange', () => {
+  updateAria();
   app.renderPage();
-  loadingBar.hide();
+  window.scrollTo(0, 0);
 });
 
 // eslint-disable-next-line no-new
