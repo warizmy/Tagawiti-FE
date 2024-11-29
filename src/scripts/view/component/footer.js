@@ -9,7 +9,6 @@ class Footer {
             <a href="#/">Beranda</a>
             <a href="#/profile">Profile</a>
             <a href="#/berita">Berita</a>
-            <a href="#/market">Market</a>
             <a href="#/galeri">Galeri</a>
           </div>
           <aside>

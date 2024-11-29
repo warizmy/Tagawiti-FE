@@ -8,7 +8,7 @@ class Gallery {
     const contentContainer = document.createElement('section');
     contentContainer.innerHTML = `
     <div class="gal-content-container">
-      <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
         <div class="pb-5 text-center">
           <h1 class="fw-semibold">Galeri</h1>
           <p class="fs-5">Galeri foto kegiatan dan pemandangan di Desa Tagawiti</p>

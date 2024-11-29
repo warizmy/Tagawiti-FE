@@ -85,6 +85,33 @@ class SwiperUtility {
         },
       },
     });
+
+    new Swiper('.swiper-4', {
+      navigation: {
+        nextEl: '.swiper-button-next-4',
+        prevEl: '.swiper-button-prev-4',
+      },
+      pagination: {
+        el: '.swiper-pagination-4',
+        clickable: true,
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1300: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+        1650: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+    });
   }
 }
 

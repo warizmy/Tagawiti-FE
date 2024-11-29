@@ -1,0 +1,129 @@
+.section-profile-1 {
+  width: 60%;
+}
+
+.section-profile-1 .box-profile {
+  background-color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-top: 3px solid #327a6d;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.section-profile-1 .box-profile .profile-text-content {
+  padding: 1.2rem;
+}
+
+.profile-section-container {
+  width: 60%;
+}
+
+.profile-section-container .box-profile-1,
+.box-profile-2 {
+  background-color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-top: 3px solid #327a6d;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.section-profile-3 {
+  width: 60%;
+}
+.section-profile-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-profile-3 p {
+  font-size: 1.2rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1650px) {
+  html {
+    font-size: 85%;
+  }
+  .section-profile-1 {
+    width: 60%;
+  }
+
+  .profile-section-container {
+    width: 75%;
+  }
+  .section-profile-3 {
+    width: 80%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1080px) {
+}
+
+@media (max-width: 580px) {
+  html {
+    font-size: 85%;
+  }
+  .section-profile-1 .box-profile .profile-text-content {
+    overflow-y: scroll;
+    height: 350px;
+  }
+  .profile-section-container h1 {
+    text-align: center;
+  }
+  .profile-section-container p {
+    text-align: center;
+  }
+  .profile-section-container .box-profile-2 {
+    height: 350px;
+    overflow: none;
+  }
+  .profile-section-container .box-profile-2 .profile-ol-container {
+    overflow-y: scroll;
+    padding: 0.8rem;
+  }
+  .section-profile-3 h1,
+  p {
+    text-align: center;
+  }
+}

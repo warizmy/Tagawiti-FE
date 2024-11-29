@@ -4,15 +4,15 @@ class Navbar {
     header.innerHTML = `
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-center gap-3">
+        <a href="/#" class="d-flex align-items-center justify-content-center gap-3" style="text-decoration: none;">
           <img src="./icon.webp">
           <div class="navbar-txt-header">
-              <a id="navbarBrand" class="navbar-brand d-flex flex-column fs-6 fw-semibold" href="/">Desa Tagawiti
+              <div id="navbarBrand" class="navbar-brand d-flex flex-column fs-6 fw-semibold">Desa Tagawiti
                 <span class="fw-normal">Kabupaten Lembata</span>
-              </a>
+              </div>
           </div>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        </a>
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -26,9 +26,6 @@ class Navbar {
             <li class="nav-item">
               <a class="nav-link" href="#/berita">Berita</a>
             </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#/market">Market</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="#/galeri">Galeri</a>
             </li>
@@ -37,6 +34,27 @@ class Navbar {
       </div>
     </nav>`;
     return header;
+  }
+
+  _initializeEvent() {
+    const navbar = document.querySelector('.navbar');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    document.addEventListener('click', (event) => {
+      if (!navbar.contains(event.target) && navbarCollapse.classList.contains('active')) {
+        navbarCollapse.classList.remove('active');
+      }
+    });
+
+    navbarToggler.addEventListener('click', (event) => {
+      navbarCollapse.classList.toggle('active');
+      event.stopPropagation();
+    });
+  }
+
+  initialize() {
+    this._initializeEvent();
   }
 }
 

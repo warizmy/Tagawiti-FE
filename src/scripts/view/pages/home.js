@@ -26,7 +26,7 @@ class Home {
       </div>
     </div>
     
-    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center">
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" data-aos="fade-up">
       <div class="section-content-1">
         <div class="d-flex flex-column align-items-center justify-content-center gap-5">
           <h1 class="fw-semibold pb-4">Selamat Datang di 
@@ -34,9 +34,9 @@ class Home {
           </h1>
           <div class="d-flex flex-row align-items-center justify-content-center gap-4 section-inner-content-1">
             <div class="d-flex align-items-center justify-content-center w-100">
-              <img data-src="./images/bg/bg-header2.webp" class="img-section-1 lazyload">
+              <img data-src="./images/bg/bg-header2.webp" class="img-section-1 lazyload" data-aos="fade-up">
             </div>
-            <div class="d-flex flex-column gap-1">
+            <div class="d-flex flex-column gap-1" data-aos="fade-down">
               <h3 style="color:#327a6d" class="fw-semibold">Desa Tagawiti</h3>
               <p class="lh-base">
                 Sebuah desa yang memadukan tradisi lokal yang kuat dengan semangat inovasi. Terletak di Kecamatan Ile Ape, Kabupaten Lembata, Nusa Tenggara Timur, 
@@ -52,7 +52,7 @@ class Home {
       </div>
     </section>
 
-    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" style="background-color: #eaf8ef">
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" style="background-color: #eaf8ef" data-aos="fade-up">
       <div class="d-flex flex-column justify-content-center py-3 section-content-2">
         <div class="pb-3">
           <h1 class="fw-semibold" style="color:#327a6d">Peta Desa</h1>
@@ -70,7 +70,7 @@ class Home {
       </div>
     </section>
 
-    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center">
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" data-aos="fade-right">
       <div class="d-flex flex-column justify-content-center py-3 section-content-3">
         <div class="pb-3">
           <h1 class="fw-semibold" style="color:#327a6d; text-transform:uppercase;">sotk</h1>
@@ -119,12 +119,12 @@ class Home {
         <div class="swiper-button-prev swiper-button-prev-1"></div>
         <div class="swiper-button-next swiper-button-next-1"></div>
         <div class="text-end pt-3">
-          <a href="#/profile" class="href-profile">Lihat Struktur Lebih Lengkap &#8594;</a>
+          <a href="#/profile" class="href-profile">Lihat Selengkapnya &#8594;</a>
         </div>
       </div>
     </section>
 
-    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" style="background-color: #eaf8ef">
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" style="background-color: #eaf8ef" data-aos="fade-up">
       <div class="d-flex flex-column justify-content-center py-3 section-content-4">
         <div class="pb-3">
           <h1 class="fw-semibold" style="color:#327a6d">APB DESA</h1>
@@ -137,7 +137,7 @@ class Home {
       </div>
     </section>
 
-    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center">
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" data-aos="fade-right">
       <div class="d-flex flex-column justify-content-center py-3 section-content-5">
         <div class="pb-3">
           <h1 class="fw-semibold" style="color:#327a6d; text-transform:uppercase;">market</h1>
@@ -145,24 +145,43 @@ class Home {
         </div>
         <div class="swiper swiper-2 section-card-content-5 py-3">
           <div class="swiper-wrapper">
-            <div class="swiper-slide card">
+            <a class="swiper-slide card" href="#/product-jagreenola" style="text-decoration: none;">
               <img data-src="./images/market/product1.webp" class="card-img-top lazyload">
-              <div class="card-body">
-                <h5 class="card-title text-center fw-semibold style="text-transform: uppercase;">Jagreenola</h5>
+              <div class="card-body d-flex flex-column align-items-start">
+                <h5 class="card-title text-center fw-semibold" style="text-transform: uppercase;">Jagreenola</h5>
+                <p class="text-start text-secondary fs-6" id="cardProductDesc">Jagreenola adalah snack granola yang terbuat dari bahan-bahan lokal khas desa Tagawiti. Jagreenola kaya akan nutrisi serta rasa yang sweet dan crunchy menambahkan kenikmatan disetiap gigitannya!</p>
               </div>
-            </div>
+            </a>
+            <a class="swiper-slide card" href="#/product-makau" style="text-decoration: none;">
+              <img data-src="./images/market/product2.webp" class="card-img-top lazyload">
+              <div class="card-body d-flex flex-column align-items-start">
+                <h5 class="card-title text-center fw-semibold" style="text-transform: uppercase;">Makau</h5>
+                <p class="text-start text-secondary fs-6" id="cardProductDesc">Makau adalah madu alami yang dihasilkan dari sarang lebah pohon bakau desa Tagawiti, murni tanpa melalui proses pengolahan apapun seperti pasteurisasi atau pencampuran dengan bahan lain, sehingga zat-zat yang bermanfaat tidak rusak.</p>
+              </div>
+            </a>
+            <a class="swiper-slide card" href="#/product-fishfloss" style="text-decoration: none;">
+              <img data-src="./images/market/product3.webp" class="card-img-top lazyload">
+              <div class="card-body d-flex flex-column align-items-start">
+                <h5 class="card-title text-center fw-semibold" style="text-transform: uppercase;">Fish Floss</h5>
+                <p class="text-start text-secondary fs-6" id="cardProductDesc">Nikmati kelezatan autentik Abon Ikan Khas Desa Tagawiti, olahan tradisional dari daging ikan segar yang dipadukan dengan racikan bumbu alami khas Indonesia. Dibuat dengan bahan berkualitas seperti santan, rempah-rempah, dan daun jeruk, abon ini menghadirkan rasa gurih, pedas, dan aroma harum yang menggoda. Tanpa bahan pengawet, abon ikan ini cocok untuk teman makan nasi, taburan mi, atau camilan langsung. Praktis, lezat, dan kaya gizi, Abon Ikan Tagawiti adalah pilihan sempurna untuk Anda yang ingin membawa kelezatan Nusantara ke meja makan Anda.</p>
+              </div>
+            </a>
+            <a class="swiper-slide card" href="#/product-greendrink" style="text-decoration: none;">
+              <img data-src="./images/market/product4.webp" class="card-img-top lazyload">
+              <div class="card-body d-flex flex-column align-items-start">
+                <h5 class="card-title text-center fw-semibold" style="text-transform: uppercase;">Green Drink</h5>
+                <p class="text-start text-secondary fs-6" id="cardProductDesc">Nikmati keaslian dan kesegaran Green Drink, minuman serbuk yang terbuat dari sari kacang hijau 100% asli tanpa bahan pengawet, pewarna, atau perasa buatan. Diproduksi di Desa Tagawiti, Green Drink menghadirkan kebaikan alami kacang hijau dalam setiap tegukan, kaya serat, protein, dan nutrisi penting lainnya.</p>
+              </div>
+            </a>
           </div>
           <div class="swiper-pagination swiper-pagination-2"></div>
           <div class="swiper-button-prev swiper-button-prev-2"></div>
           <div class="swiper-button-next swiper-button-next-2"></div>
-          <div class="text-end pt-3">
-            <a href="#/market">Lihat Selengkapnya &#8594;</a>
-          </div>
         </div>
       </div>
     </section>    
 
-    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" style="background-color: #eaf8ef">
+    <section class="d-flex my-5 py-5 flex-column align-items-center jusify-content-center" style="background-color: #eaf8ef" data-aos="fade-right">
       <div class="d-flex flex-column justify-content-center py-3 section-content-6">
         <div class="pb-3">
           <h1 class="fw-semibold" style="color:#327a6d; text-transform:uppercase;">berita</h1>
@@ -188,6 +207,14 @@ class Home {
     new SwiperUtility();
     new IncomeChart('https://api.desatagawiti.com');
     this._getNews();
+    this._evenListener();
+  }
+
+  _evenListener() {
+    const productdesc = document.querySelectorAll('#cardProductDesc');
+    productdesc.forEach((descElement) => {
+      descElement.innerText = limitWords(descElement.innerText, 6);
+    });
   }
 
   async _getNews() {
