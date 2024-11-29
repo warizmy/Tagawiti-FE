@@ -44,6 +44,7 @@ class News {
       const result = await response.json();
       if (response.ok && result.data) {
         this.newsData = result.data;
+        result.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
       } else {
         throw new Error(result.message || 'Gagal mengambil data berita.');
       }
@@ -123,8 +124,8 @@ class News {
       const button = document.createElement('button');
       button.className = 'btn';
       button.style.borderColor = '#327a6d';
-      button.style.color = i === this.currentPage ? 'white' : '#327a6d'; // Warna putih untuk halaman aktif
-      button.style.backgroundColor = i === this.currentPage ? '#327a6d' : 'transparent'; // Latar belakang hijau untuk halaman aktif
+      button.style.color = i === this.currentPage ? 'white' : '#327a6d';
+      button.style.backgroundColor = i === this.currentPage ? '#327a6d' : 'transparent';
       button.textContent = i;
       button.onclick = () => {
         this.currentPage = i;

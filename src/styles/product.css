@@ -65,6 +65,7 @@
   }
   .product-section-2-content {
     flex-wrap: wrap;
+    text-align: center;
   }
   .product-text-description p {
     text-align: start;
