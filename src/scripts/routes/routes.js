@@ -1,5 +1,4 @@
 import Gallery from '../view/pages/feature/gallery';
-import Market from '../view/pages/feature/market';
 import News from '../view/pages/feature/news';
 import Product1 from '../view/pages/feature/product/product1';
 import Product2 from '../view/pages/feature/product/product2';
@@ -15,7 +14,6 @@ const routes = {
   '/galeri': Gallery,
   '/profile': Profile,
   '/berita': News,
-  '/market': Market,
   '/berita/:id-title': DetailBerita,
   '/product-jagreenola': Product1,
   '/product-makau': Product2,

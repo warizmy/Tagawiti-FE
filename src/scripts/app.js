@@ -3,7 +3,6 @@ import UrlParser from './routes/url-parser';
 import GoToTopButton from './utils/btnGoTop';
 import Footer from './view/component/footer';
 import Navbar from './view/component/navbar';
-import Market from './view/pages/feature/market';
 import News from './view/pages/feature/news';
 import Product1 from './view/pages/feature/product/product1';
 import Product2 from './view/pages/feature/product/product2';
@@ -59,11 +58,6 @@ class Main {
       if (url === '/profile') {
         const profilePage = new Profile();
         profilePage._initializeEvent();
-      }
-
-      if (url === '/market') {
-        const marketPage = new Market();
-        marketPage._initializeEvent();
       }
       if (url === '/product-jagreenola') {
         const product1Page = new Product1();
